@@ -1,0 +1,251 @@
+/* Jurijs Avtaikins - Build a Portfolio Site CSS */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  font-family: Numans;
+  font-size: 14px;
+  color: #009;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+header, main, section, footer, hr {
+  box-sizing: border-box;
+  margin: auto;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/*
+ *
+ * Header
+ *
+ */
+
+.logo__link {
+  color: inherit;
+}
+
+.logo__path1 {
+  fill: currentColor;
+}
+
+.logo__path2 {
+  fill: #02b3e4;
+}
+
+.header {
+  padding: 1em 1em 0;
+  display: flex;
+}
+
+.header h1 {
+  font-weight: normal;
+  font-size: 1.7em;
+}
+
+.header h2 {
+  font-weight: lighter;
+  font-size: 1em;
+}
+
+.header__logo {
+  height: 50px;
+  padding: 0 1em 1em 0;
+}
+
+.header__line {
+  border: 0.5em solid #009;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+
+/*
+ *
+ * Main
+ *
+ */
+
+main {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+
+/*
+ *
+ * Content
+ *
+ */
+
+
+/*
+ *
+ * Background Picture
+ *
+ */
+
+.bg__picture {
+  height: 3em;
+  min-height: 3em;
+  background-image: url(../img/bg_picture.png);
+  background-image: -webkit-image-set(url(../img/bg_picture_3x.png) 3x, url(../img/bg_picture.png) 1x);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg__gradient {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.60);
+  background: linear-gradient(rgba(255, 255, 255, 0.60), white);
+  border-bottom: 1px solid white;
+}
+
+
+/*
+ *
+ * Featured
+ *
+ */
+
+.featured {
+ padding-left: 1em;
+}
+
+.featured h2 {
+  text-transform: none;
+}
+
+.featured ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1em;
+}
+
+.featured li {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  border-top: 5px solid currentColor;
+  padding: 1em;
+  margin-right: 1em;
+}
+
+.featured h3 {
+  font-size: 4vw;
+}
+
+.featured a {
+  font-size: 3vw;
+  color: #02b3e4;
+  text-decoration: none;
+}
+
+.featured a:hover {
+  text-decoration: underline;
+}
+
+.featured img {
+  width: 100%;
+  position: relative;
+}
+
+
+/*
+ *
+ * Footer
+ *
+ */
+
+footer {
+  border-top: 1px solid #E0E0E0;
+  margin-top: 1em;
+  padding: 1em 0;
+  text-align: center;
+
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.7em;
+}
+
+
+/*
+ *
+ * Responsive
+ *
+ */
+
+/* adjust bg__picture's height for tall screens, split the list for wide screens and adjust fonts accordingly */
+@media screen and (min-width: 550px) {
+  .bg__picture {
+    height: calc(100vh - 460px);
+  }
+
+  .featured h3 {
+    font-size: 1.6vw;
+  }
+
+  .featured a {
+    font-size: 1.3vw;
+  }
+
+  .featured {
+    height: 300px;
+    position: relative;
+  }
+
+  .featured__list {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .featured__list li {
+    width: calc((100% - 9em)/3);
+  }
+}
+
+/* rotated devices */
+@media screen and (max-height: 549px) {
+  .featured {
+    height: auto;
+  }
+  .featured__list {
+    position: inherit;
+  }
+}
+
+/* limit page width and adjust fonts accordingly */
+@media screen and (min-width: 850px) {
+  header, main, section, footer {
+    width: 850px;
+  }
+
+  .featured h3 {
+    font-size: 1.1em;
+  }
+
+  .featured a {
+    font-size: 0.8em;
+  }
+
+/* end of styles.css */
